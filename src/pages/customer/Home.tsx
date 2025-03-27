@@ -1,5 +1,6 @@
 import React from "react";
 import MainLayout from "../../layout/MainLayout";
+import { Link } from "react-router-dom";
 
 const Home: React.FC = () => {
   return (
@@ -33,8 +34,11 @@ const Home: React.FC = () => {
 
             {/* Trích dẫn nổi bật */}
             <div className="text-black text-center py-6 px-4 rounded-lg mt-10 mb-10">
-              <p className="text-3xl italic max-w-3xl mx-auto">
+              {/* <p className="text-3xl italic max-w-3xl mx-auto">
                 "Political power, properly so called, is merely the organized power of one class for oppressing another."
+              </p> */}
+              <p className="text-3xl italic max-w-4xl mx-auto">
+                "Quyền lực chính trị, theo đúng nghĩa đen, chỉ đơn thuần là quyền lực có tổ chức của một giai cấp để áp bức một giai cấp khác."
               </p>
               <p className="text-xl mt-2 font-semibold text-right max-w-3xl mx-auto">
                 — Karl Marx —
@@ -62,50 +66,57 @@ const Home: React.FC = () => {
             {/* Phần 3 thẻ (cards) */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10 ml-24 mr-10">
               {/* Card 1 */}
-              <div className="bg-white p-4 rounded-lg shadow-md w-96">
-                <img
-                  className="h-60 rounded-lg mb-4 mx-auto block"
-                  src="https://tailieuhust.com/wp-content/uploads/2021/09/KINH-TE-CHINH-TRI-THUBM-1024x683.jpg"
-                  alt="kinhtechinhtri"
-                />
-                <h3 className="text-lg font-semibold text-blue-900 mb-2">
-                  Định nghĩa kinh tế chính trị Mác Lê-Nin
-                </h3>
-                <p className="text-gray-700">
-                  Hiểu rõ hơn về định nghĩa của kinh tế chính trị Mác Lê-Nin. Đồng thời nắm rõ các ý nghĩa cũng như các phương pháp nghiên cứu và tiếp cận tới môn học này.
-                </p>
-              </div>
+              <Link to={"/political-economy"}>
+                <div className="bg-white p-4 rounded-lg shadow-md w-96">
+                  <img
+                    className="h-60 rounded-lg mb-4 mx-auto block"
+                    src="https://tailieuhust.com/wp-content/uploads/2021/09/KINH-TE-CHINH-TRI-THUBM-1024x683.jpg"
+                    alt="kinhtechinhtri"
+                  />
+                  <h3 className="text-lg font-semibold text-blue-900 mb-2">
+                    Định nghĩa kinh tế chính trị Mác Lê-Nin
+                  </h3>
+                  <p className="text-gray-700">
+                    Hiểu rõ hơn về định nghĩa của kinh tế chính trị Mác Lê-Nin. Đồng thời nắm rõ các ý nghĩa cũng như các phương pháp nghiên cứu và tiếp cận tới môn học này.
+                  </p>
+                </div>
+              </Link>
 
               {/* Card 2 */}
-              <div className="bg-white p-4 rounded-lg shadow-md w-96">
-                <img
-                  className="h-60 rounded-lg mb-4 mx-auto block"
-                  src="https://lh6.googleusercontent.com/proxy/4bT0RrLlrkNLlmX_fnRNTwr40jMwzaFCcTQprVrQnsbeYXssSN8_-D-fvbAosSmMfHu6vIS9YHMzRkXV51NE3Y8ZeG2YVzOd6pycQHmXoJCM_QvAD1DlINA9mL6TQ4SqoxHdUM4_jKUp2Tj752UJueZooS2cftFP2vTvJdgtSvMr0d1W2C4xsEz78A"
-                  alt="kinhtechinhtri"
-                />
-                <h3 className="text-lg font-semibold text-blue-900 mb-2">
-                  Phân tích ảnh hưởng lịch sử của tư tưởng Mác Lê-Nin đến phát triển kinh tế
-                </h3>
-                <p className="text-gray-700">
-                  Phân tích ảnh hưởng lịch sử của tư tưởng Mác Lê-Nin đến phát triển kinh tế từ đó nắm rõ hơn về việc phát triển kinh tế đóng vai trò quan trọng như thế nào.
-                </p>
-              </div>
+              <Link to={"/analysis"}>
+                <div className="bg-white p-4 rounded-lg shadow-md w-96">
+                  <img
+                    className="h-60 rounded-lg mb-4 mx-auto block"
+                    src="https://lh6.googleusercontent.com/proxy/4bT0RrLlrkNLlmX_fnRNTwr40jMwzaFCcTQprVrQnsbeYXssSN8_-D-fvbAosSmMfHu6vIS9YHMzRkXV51NE3Y8ZeG2YVzOd6pycQHmXoJCM_QvAD1DlINA9mL6TQ4SqoxHdUM4_jKUp2Tj752UJueZooS2cftFP2vTvJdgtSvMr0d1W2C4xsEz78A"
+                    alt="kinhtechinhtri"
+                  />
+                  <h3 className="text-lg font-semibold text-blue-900 mb-2">
+                    Phân tích ảnh hưởng lịch sử của tư tưởng Mác Lê-Nin đến phát triển kinh tế
+                  </h3>
+                  <p className="text-gray-700">
+                    Phân tích ảnh hưởng lịch sử của tư tưởng Mác Lê-Nin đến phát triển kinh tế từ đó nắm rõ hơn về việc phát triển kinh tế đóng vai trò quan trọng như thế nào.
+                  </p>
+                </div>
+              </Link>
 
               {/* Card 3 */}
-              <div className="bg-white p-4 rounded-lg shadow-md w-96">
-                <img
-                  className="h-60 rounded-lg mb-4 mx-auto block"
-                  src="https://cdn.thuvienphapluat.vn/phap-luat/2022-2/LVPD/kinh-te.jpg"
-                  alt="kinhtechinhtri"
-                />
-                <h3 className="text-lg font-semibold text-blue-900 mb-2">
-                  Đánh giá sự phù hợp của kinh tế chính trị Mác-Lênin trong bối cảnh kinh tế hiện đại
-                </h3>
-                <p className="text-gray-700">
-                  Đánh giá sự phù hợp và liệu răng kinh tế chính trị Mác-Lênin có vai trò quan trọng trong bối cảnh kinh tế hiện đại?
-                </p>
-              </div>
+              <Link to={"/evaluate"}>
+                <div className="bg-white p-4 rounded-lg shadow-md w-96">
+                  <img
+                    className="h-60 rounded-lg mb-4 mx-auto block"
+                    src="https://cdn.thuvienphapluat.vn/phap-luat/2022-2/LVPD/kinh-te.jpg"
+                    alt="kinhtechinhtri"
+                  />
+                  <h3 className="text-lg font-semibold text-blue-900 mb-2">
+                    Đánh giá sự phù hợp của kinh tế chính trị Mác-Lênin trong bối cảnh kinh tế hiện đại
+                  </h3>
+                  <p className="text-gray-700">
+                    Đánh giá sự phù hợp và liệu răng kinh tế chính trị Mác-Lênin có vai trò quan trọng trong bối cảnh kinh tế hiện đại?
+                  </p>
+                </div>
+              </Link>
             </div>
+
 
           </div>
         </div>

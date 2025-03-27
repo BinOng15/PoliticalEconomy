@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import MainLayout from "../../layout/MainLayout";
-import { CloseOutlined, MenuOutlined, MenuUnfoldOutlined, RightOutlined } from "@ant-design/icons";
+import { CloseOutlined, MenuOutlined, MenuUnfoldOutlined, RightOutlined, UpOutlined } from "@ant-design/icons";
 
 const PoliticalEconomy: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false); // State cho menu điều hướng trên mobile
     const [isTocOpen, setIsTocOpen] = useState(true); // State cho mục lục (Table of Contents)
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth", // Cuộn mượt mà
+        });
+    };
 
     return (
         <>
@@ -211,57 +218,59 @@ const PoliticalEconomy: React.FC = () => {
                             </div>
 
                             {/* Thanh điều hướng cố định (Sticky Sidebar) - Chỉ hiển thị trên desktop */}
-                            <div className="hidden lg:block fixed right-0 w-64 bg-indigo-50 p-5 rounded-l-xl shadow-lg z-10">
-                                <h3 className="text-lg font-semibold text-indigo-800 mb-4">
-                                    Các bài viết khác
-                                </h3>
-                                <ul className="space-y-3">
-                                    <li>
-                                        <a
-                                            href="/core-principles"
-                                            className="flex items-center text-base font-medium text-indigo-600 hover:text-indigo-800 hover:bg-indigo-100 px-2 py-1 rounded-md transition-all"
-                                        >
-                                            <RightOutlined className="mr-2 text-indigo-600" />
-                                            Các nguyên tắc cốt lõi của kinh tế chính trị Mác Lê-Nin
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a
-                                            href="/analysis"
-                                            className="flex items-center text-base font-medium text-indigo-600 hover:text-indigo-800 hover:bg-indigo-100 px-2 py-1 rounded-md transition-all"
-                                        >
-                                            <RightOutlined className="mr-2 text-indigo-600" />
-                                            Phân tích ảnh hưởng lịch sử của tư tưởng Mác Lê-Nin đến phát triển kinh tế
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a
-                                            href="/evaluate"
-                                            className="flex items-center text-base font-medium text-indigo-600 hover:text-indigo-800 hover:bg-indigo-100 px-2 py-1 rounded-md transition-all"
-                                        >
-                                            <RightOutlined className="mr-2 text-indigo-600" />
-                                            Đánh giá sự phù hợp của Kinh tế Chính trị Mác-Lênin trong bối cảnh kinh tế hiện đại
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a
-                                            href="discover"
-                                            className="flex items-center text-base font-medium text-indigo-600 hover:text-indigo-800 hover:bg-indigo-100 px-2 py-1 rounded-md transition-all"
-                                        >
-                                            <RightOutlined className="mr-2 text-indigo-600" />
-                                            Khám phá cách vận dụng tư tưởng Mác-Lênin vào giải quyết các vấn đề kinh tế hiện đại
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a
-                                            href="document"
-                                            className="flex items-center text-base font-medium text-indigo-600 hover:text-indigo-800 hover:bg-indigo-100 px-2 py-1 rounded-md transition-all"
-                                        >
-                                            <RightOutlined className="mr-2 text-indigo-600" />
-                                            Tài liệu tham khảo
-                                        </a>
-                                    </li>
-                                </ul>
+                            <div className="lg:w-1/4 hidden lg:block">
+                                <div className="w-full bg-indigo-50 p-5 rounded-xl shadow-lg">
+                                    <h3 className="text-lg font-semibold text-indigo-800 mb-4">
+                                        Các bài viết khác
+                                    </h3>
+                                    <ul className="space-y-3">
+                                        <li>
+                                            <a
+                                                href="/core-principles"
+                                                className="flex items-center text-base font-medium text-indigo-600 hover:text-indigo-800 hover:bg-indigo-100 px-2 py-1 rounded-md transition-all"
+                                            >
+                                                <RightOutlined className="mr-2 text-indigo-600" />
+                                                Các nguyên tắc cốt lõi của kinh tế chính trị Mác Lê-Nin
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="/analysis"
+                                                className="flex items-center text-base font-medium text-indigo-600 hover:text-indigo-800 hover:bg-indigo-100 px-2 py-1 rounded-md transition-all"
+                                            >
+                                                <RightOutlined className="mr-2 text-indigo-600" />
+                                                Phân tích ảnh hưởng lịch sử của tư tưởng Mác Lê-Nin đến phát triển kinh tế
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="/evaluate"
+                                                className="flex items-center text-base font-medium text-indigo-600 hover:text-indigo-800 hover:bg-indigo-100 px-2 py-1 rounded-md transition-all"
+                                            >
+                                                <RightOutlined className="mr-2 text-indigo-600" />
+                                                Đánh giá sự phù hợp của Kinh tế Chính trị Mác-Lênin trong bối cảnh kinh tế hiện đại
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="discover"
+                                                className="flex items-center text-base font-medium text-indigo-600 hover:text-indigo-800 hover:bg-indigo-100 px-2 py-1 rounded-md transition-all"
+                                            >
+                                                <RightOutlined className="mr-2 text-indigo-600" />
+                                                Khám phá cách vận dụng tư tưởng Mác-Lênin vào giải quyết các vấn đề kinh tế hiện đại
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="document"
+                                                className="flex items-center text-base font-medium text-indigo-600 hover:text-indigo-800 hover:bg-indigo-100 px-2 py-1 rounded-md transition-all"
+                                            >
+                                                <RightOutlined className="mr-2 text-indigo-600" />
+                                                Tài liệu tham khảo
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
 
                             {/* Menu điều hướng trên mobile */}
@@ -337,6 +346,14 @@ const PoliticalEconomy: React.FC = () => {
                             )}
 
                         </div>
+                        {/* Nút quay lại đầu trang */}
+                        <button
+                            onClick={scrollToTop}
+                            className="fixed bottom-64 right-12 bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-700 transition-all z-20"
+                            title="Quay lại đầu trang"
+                        >
+                            <UpOutlined className="text-lg" />
+                        </button>
                     </div>
                 </div>
             </MainLayout>

@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import MainLayout from "../../layout/MainLayout";
-import { MenuOutlined, RightOutlined, CloseOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
+import { MenuOutlined, RightOutlined, CloseOutlined, MenuUnfoldOutlined, UpOutlined } from "@ant-design/icons";
 
 const Discover: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false); // State cho menu điều hướng trên mobile
     const [isTocOpen, setIsTocOpen] = useState(true); // State cho mục lục (Table of Contents)
-
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth", // Cuộn mượt mà
+        });
+    };
     return (
         <>
             <MainLayout>
@@ -348,6 +353,14 @@ const Discover: React.FC = () => {
                                 </div>
                             </div>
                         </div>
+                        {/* Nút quay lại đầu trang */}
+                        <button
+                            onClick={scrollToTop}
+                            className="fixed bottom-24 right-72 bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-700 transition-all z-20"
+                            title="Quay lại đầu trang"
+                        >
+                            <UpOutlined className="text-lg" />
+                        </button>
                     </div>
                 </div>
             </MainLayout>
