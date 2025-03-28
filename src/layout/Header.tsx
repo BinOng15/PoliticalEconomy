@@ -9,15 +9,19 @@ const CustomHeader: React.FC = () => {
     <header className="bg-[#E7E4DB] py-6 px-20">
       <div className="flex justify-between items-center">
         {/* Logo bên trái */}
-        <Link to="/" className="flex items-center">
+        <Link to="/" className="flex items-center ">
           <img
             src="/Asset.png"
             alt="PolEcon Logo"
-            className="h-10 mr-3"
+            className="h-10 mr-3 "
           />
           <div>
-            <h1 className="text-xl font-bold text-blue-900">PolEcon</h1>
-            <p className="text-xs text-blue-900">Chill cùng MLN</p>
+            <h1 className="text-xl font-extrabold text-indigo-900 
+                                      bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 
+                                      drop-shadow-md">PolEcon</h1>
+            <p className="text-xs text-indigo-900 
+                                      bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 
+                                      drop-shadow-md">Chill cùng MLN</p>
           </div>
         </Link>
 
